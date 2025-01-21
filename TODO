@@ -1,10 +1,11 @@
 - [x] Install PriveVue and PrimeFlex
 - [x] Install Pinia
-- [] Install PrimeIcons
 - [x] Deploy to Vercel (first time)
-- [] Setup PostgreSQL database in vercel
+- [x] Create Basic page w/ single input with submission button
+- [] When hitting enter, submit the long URL (Current behaviour is to submit on button click)
 - [] Create API routes to create short URLs
 - [] Create API routes to get short URLs
-- [] Create Basic page w/ single input with submission button
-- [] Analytics for short URLs
+- [] Setup PostgreSQL database in vercel
 - [] Make account to manage short URLs and analytics
+- [] Analytics for short URLs
+- [] Install PrimeIcons
