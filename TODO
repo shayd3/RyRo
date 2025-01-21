@@ -1,7 +1,7 @@
 - [x] Install PriveVue and PrimeFlex
 - [x] Install Pinia
 - [] Install PrimeIcons
-- [] Deploy to Vercel (first time)
+- [x] Deploy to Vercel (first time)
 - [] Setup PostgreSQL database in vercel
 - [] Create API routes to create short URLs
 - [] Create API routes to get short URLs
