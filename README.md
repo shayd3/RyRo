@@ -38,10 +38,9 @@ pnpm preview
 
 # Stack
 * Vue - Frontend Framework
-* Nuxt - Vue Framework
+* Nuxt - Vue Framework [SSR, Static Site Generation, API Routes, etc.]
 * Vercel - Hosting
 * TailwindCSS - CSS Framework
 * pnpm - Package Manager
 * TypeScript - Language
-*
 
