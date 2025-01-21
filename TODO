@@ -1,4 +1,5 @@
-- [] Install PriveVue and PrimeFlex
+- [x] Install PriveVue and PrimeFlex
+- [x] Install Pinia
 - [] Install PrimeIcons
 - [] Deploy to Vercel (first time)
 - [] Setup PostgreSQL database in vercel
