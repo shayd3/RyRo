@@ -1,0 +1,9 @@
+- [] Install PriveVue and PrimeFlex
+- [] Install PrimeIcons
+- [] Deploy to Vercel (first time)
+- [] Setup PostgreSQL database in vercel
+- [] Create API routes to create short URLs
+- [] Create API routes to get short URLs
+- [] Create Basic page w/ single input with submission button
+- [] Analytics for short URLs
+- [] Make account to manage short URLs and analytics
