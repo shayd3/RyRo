@@ -8,9 +8,12 @@ export default defineNuxtConfig({
   // https://primevue.org/nuxt
   primevue: {
     options: {
+      ripple: true,
+      inputVariant: 'filled',
       theme: {
           preset: Aura
       }
-    }
+    },
+    autoImport: true
   }
 })
