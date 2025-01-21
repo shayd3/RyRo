@@ -37,10 +37,11 @@ pnpm preview
 ```
 
 # Stack
+* TypeScript - Language
+* pnpm - Package Manager
+* Vercel - Hosting
 * Vue - Frontend Framework
 * Nuxt - Vue Framework [SSR, Static Site Generation, API Routes, etc.]
-* Vercel - Hosting
-* TailwindCSS - CSS Framework
-* pnpm - Package Manager
-* TypeScript - Language
+* PrimeVue+PrimeFlex - Component Libary + CSS Framework
+* Pinia - State Management
 
