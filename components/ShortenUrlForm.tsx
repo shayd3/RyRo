@@ -10,10 +10,17 @@ export default function ShortenUrlForm() {
     e.preventDefault();
 
     try {
-        // Simulate API call with a fake shortened URL
-        const fakeShortUrl = `${window.location.origin}/${Math.random().toString(36).substring(2, 10)}`;
-        setShortUrl(fakeShortUrl);
-        setError('');
+        const response = await fetch('/api/v1/url', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url }),
+          });
+
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || 'Failed to shorten');
+
+          setShortUrl(`${window.location.origin}/${data.slug}`);
+          setError('');
       } catch (err) {
         setError('Failed to shorten URL: ' + err);
       }
