@@ -14,15 +14,20 @@ export default function ShortenUrlForm() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url }),
-          });
+        });
 
-          const data = await response.json();
-          if (!response.ok) throw new Error(data.error || 'Failed to shorten');
+        const data = await response.json();
 
-          setShortUrl(`${window.location.origin}/${data.slug}`);
-          setError('');
+        if (!response.ok) {
+            const errorMessage = data.error || `Server error: ${response.status} ${response.statusText}`;
+            throw new Error(errorMessage);
+        }
+
+        setShortUrl(`${window.location.origin}/${data.shortUrl.slug}`);
+        // setError('');
       } catch (err) {
-        setError('Failed to shorten URL: ' + err);
+        console.error('Error shortening URL:', err);
+        setError(err instanceof Error ? err.message : 'An unexpected error occurred');
       }
   }
 

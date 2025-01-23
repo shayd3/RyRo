@@ -38,10 +38,8 @@ export async function POST(req: Request) {
         }
 
         return NextResponse.json(
-            { error: 'Internal server error' },
+            { error: 'Internal server error', details: error instanceof Error ? error.message : String(error) },  // Added details
             { status: 500 }
         );
     }
 }
-
-export const runtime = 'edge';
