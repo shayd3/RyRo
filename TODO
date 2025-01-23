@@ -1,7 +1,6 @@
-- [x] Install PriveVue and PrimeFlex
-- [x] Install Pinia
 - [x] Deploy to Vercel (first time)
-- [x] Create Basic page w/ single input with submission button
+- [] Convert to React instead
+- [] Create Basic page w/ single input with submission button
 - [] When hitting enter, submit the long URL (Current behaviour is to submit on button click)
 - [] Create API routes to create short URLs
 - [] Create API routes to get short URLs
