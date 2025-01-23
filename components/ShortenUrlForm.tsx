@@ -15,7 +15,7 @@ export default function ShortenUrlForm() {
         setShortUrl(fakeShortUrl);
         setError('');
       } catch (err) {
-        setError('Failed to shorten URL');
+        setError('Failed to shorten URL: ' + err);
       }
   }
 
