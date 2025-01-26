@@ -6,5 +6,5 @@
 - [x] Create API routes to get short URLs (With redirect)
 - [x] Setup PostgreSQL database in vercel
 - [] Make account to manage short URLs and analytics
-- [] Analytics for short URLs
+- [x] Analytics for short URLs
 - [] Rate limiting for short URLs
