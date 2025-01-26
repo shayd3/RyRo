@@ -1,10 +1,10 @@
 - [x] Deploy to Vercel (first time)
-- [] Convert to React instead
-- [] Create Basic page w/ single input with submission button
-- [] When hitting enter, submit the long URL (Current behaviour is to submit on button click)
-- [] Create API routes to create short URLs
-- [] Create API routes to get short URLs
-- [] Setup PostgreSQL database in vercel
+- [x] Convert to React instead
+- [x] Create Basic page w/ single input with submission button
+- [x] Create API routes to create short URLs
+- [] Get development environment working (vercel, while still able to run locally. It all gets deployed to prod right now.)
+- [x] Create API routes to get short URLs (With redirect)
+- [x] Setup PostgreSQL database in vercel
 - [] Make account to manage short URLs and analytics
-- [] Analytics for short URLs
-- [] Install PrimeIcons
+- [x] Analytics for short URLs
+- [] Rate limiting for short URLs

@@ -4,12 +4,13 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("POSTGRES_URL_NON_POOLING")
+  url      = env("DATABASE_URL")
 }
 
 model ShortUrl {
   id        String   @id @default(cuid())
   slug      String   @unique
   original  String
+  visits    Int      @default(0)
   createdAt DateTime @default(now())
 }
