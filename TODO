@@ -3,7 +3,7 @@
 - [x] Create Basic page w/ single input with submission button
 - [x] Create API routes to create short URLs
 - [] Get development environment working (vercel, while still able to run locally. It all gets deployed to prod right now.)
-- [] Create API routes to get short URLs (With redirect)
+- [x] Create API routes to get short URLs (With redirect)
 - [x] Setup PostgreSQL database in vercel
 - [] Make account to manage short URLs and analytics
 - [] Analytics for short URLs
