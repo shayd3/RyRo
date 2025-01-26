@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react';
 
+// TODO: Add a loading state
+// TODO: Rate limiting for short URLs
 export default function ShortenUrlForm() {
   const [url, setUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
