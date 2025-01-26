@@ -2,7 +2,10 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 
 // TODO: Rate limiting for short URLs
-export async function GET(req: Request, { params }: { params: { slug: string } }) {
+export async function GET(
+    request: Request,
+    { params }: { params: Promise<{slug: string }> }
+): Promise<NextResponse> {
     try {
         const { slug } = await params;
         const shortUrl = await prisma.shortUrl.findUnique({ where: { slug } });
