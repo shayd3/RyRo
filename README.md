@@ -66,3 +66,23 @@ vercel
 
 4. Open your deployed URL to see the result.
 
+## Prisma Database
+
+The database is deployed on Vercel (Via Supabase). To see the database, you can use the Vercel dashboard.
+
+### Update Database Schema
+
+```bash
+pnpx prisma migrate dev
+```
+You can also use `pull` or `push` to update the Database Schema from the Supabase dashboard.
+```bash
+pnpm prisma db pull # Pull the latest schema from Supabase
+pnpm prisma db push # Push the schema
+```
+
+### Generate Prisma Client
+
+```bash
+pnpm prisma generate
+```

@@ -14,6 +14,10 @@ export async function GET(req: Request, { params }: { params: { slug: string } }
             );
         }
         // TODO: Update the "visit" or "clicks" count
+        await prisma.shortUrl.update({
+            where: { slug },
+            data: { visits: { increment: 1 } }
+        });
         return NextResponse.redirect(shortUrl.original);
     } catch (error) {
         console.error('Error redirecting to original URL:', error);
