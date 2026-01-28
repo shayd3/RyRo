@@ -16,5 +16,8 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-    matcher: '/:slug'
+    matcher: [
+        // Match single segment paths but exclude special routes
+        '/((?!api|auth|dashboard|_next|favicon.ico).*)',
+    ]
 }

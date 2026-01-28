@@ -11,8 +11,34 @@ User → middleware.ts (slug redirect) → /api/v1/url/[slug] → PostgreSQL
 
 - **Middleware** ([middleware.ts](../middleware.ts)): Intercepts `/:slug` requests and redirects to the API
 - **API Routes** ([app/api/v1/url/](../app/api/v1/url/)): RESTful endpoints for creating and resolving short URLs
+- **Auth** ([lib/auth.ts](../lib/auth.ts)): NextAuth.js v5 with credentials provider and Prisma adapter
 - **Database** ([lib/db.ts](../lib/db.ts)): Singleton Prisma client pattern for connection pooling
 - **Single Page UI**: React client component form submits to API, no server actions
+
+## Authentication
+
+Using NextAuth.js v5 (beta) with:
+- Credentials provider (email/password)
+- JWT session strategy
+- Prisma adapter for user storage
+- Custom signup via `/api/auth/register`
+
+Session access:
+```typescript
+// Server-side (API routes, server components)
+import { auth } from '@/lib/auth';
+const session = await auth();
+
+// Client-side
+import { useSession } from 'next-auth/react';
+const { data: session } = useSession();
+```
+
+## URL Expiration
+
+- **Authenticated users**: URLs never expire (`expiresAt: null`)
+- **Anonymous users**: URLs expire after 24 hours
+- Future: Ad-watching to extend expiration (1 week / 1 month)
 
 ## Key Patterns
 
@@ -61,18 +87,26 @@ pnpm lint         # ESLint
 - `pnpm postinstall` runs `prisma generate` automatically
 
 ```bash
+npx prisma db push        # Push schema changes (dev)
 npx prisma migrate dev    # Create/apply migrations locally
 npx prisma studio         # Visual database browser
 ```
 
 ## Data Model
 
-Single table `ShortUrl` with fields: `id` (cuid), `slug` (unique), `original` (full URL), `visits` (counter), `createdAt`
+**User** - NextAuth.js user with accounts, sessions
+**ShortUrl** - `id`, `slug` (unique), `original`, `visits`, `createdAt`, `expiresAt`, `userId` (optional)
+
+## Environment Variables
+
+Required:
+- `DATABASE_URL` - PostgreSQL connection string
+- `AUTH_SECRET` - NextAuth.js secret (generate with `openssl rand -base64 32`)
 
 ## Planned Features (from TODO)
 
 - Rate limiting for URL creation and redirects
-- User accounts for managing URLs and analytics
+- Ad-watching to extend URL expiration
 - Local development environment separate from prod
 
 ## Conventions
